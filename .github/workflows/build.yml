@@ -6,6 +6,8 @@ jobs:
     steps:
       - name: pull the code
         uses: actions/checkout@v4
+      - name: install dependecies
+        run: npm i
       - name: Lint
         run: npm run lint
   Test:
@@ -14,6 +16,8 @@ jobs:
     steps:
       - name: pull the code
         uses: actions/checkout@v4
+      - name: install dependecies
+        run: npm i
       - name: test the project
         run: npm run test
   Build:
@@ -22,5 +26,7 @@ jobs:
     steps:
       - name: pull the code
         uses: actions/checkout@v4
+      - name: install dependecies
+        run: npm i
       - name: Build it
         run: npm run build
