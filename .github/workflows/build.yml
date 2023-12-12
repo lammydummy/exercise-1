@@ -1,0 +1,26 @@
+name: build the project
+on: push
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull the code
+        uses: actions/checkout@v4
+      - name: Lint
+        run: npm run lint
+  Test:
+    needs: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull the code
+        uses: actions/checkout@v4
+      - name: test the project
+        run: npm run test
+  Build:
+    needs: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull the code
+        uses: actions/checkout@v4
+      - name: Build it
+        run: npm run build
