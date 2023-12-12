@@ -1,0 +1,8 @@
+name: issues WorkFlow
+on: issues
+jobs:
+  Issue-trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check the context object
+        run: echo "${{github}}"
